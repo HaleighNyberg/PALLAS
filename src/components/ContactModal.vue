@@ -60,6 +60,7 @@
 <script>
 import { ref, computed } from "vue";
 import { showContactModal, closeContactForm } from '../utils/eventBus';
+import emailjs from '@emailjs/browser';
 
 export default {
   name: "ContactModal",
@@ -80,26 +81,41 @@ export default {
     const submitContactForm = async () => {
       try {
         isSubmitting.value = true;
-        
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        contactForm.value = {
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
+
+        const templateParams = {
+          title: contactForm.value.subject,
+          name: contactForm.value.name,
+          time: new Date().toLocaleString(),
+          message: contactForm.value.message,
+          email: contactForm.value.email
         };
-        
+
+        await emailjs.send(
+          'service_1gwh18f',     
+          'template_jorfw1u',    
+          templateParams,
+          '1L-SCqyOyFX3WYZaa'      
+        );
+
+        contactForm.value = {
+          title: '',
+          name: '',
+          time: '',
+          message: '',
+          email: ''
+        };
+
         closeContactModal();
-        
         alert('Thank you for contacting us! We\'ll get back to you soon.');
-        
+
       } catch (error) {
+        console.error('Email send failed:', error);
         alert('Sorry, there was an error sending your message. Please try again.');
       } finally {
         isSubmitting.value = false;
       }
     };
+
     
     const closeContactModal = () => {
       closeContactForm();

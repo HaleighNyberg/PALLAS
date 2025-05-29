@@ -165,6 +165,9 @@
 </template>
 
 <script>
+import emailjs from '@emailjs/browser';
+
+
 export default {
   name: 'BestPractices',
   mounted() {
@@ -391,22 +394,36 @@ export default {
     },
     resetForm() {
       this.submitForm = {
-        userType: '',
-        email: '',
-        question: ''
+        role: '',
+        name: '',
+        time: '',
+        question: '',
+        email: ''
       };
     },
     async submitQuestion() {
       try {
-        console.log('Submitting question:', this.submitForm);
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        const templateParams = {
+          role: this.submitForm.userType || 'Not specified',
+          name: '',  
+          time: new Date().toLocaleString(),
+          question: this.submitForm.question,
+          email: this.submitForm.email || 'No email provided'
+        };
+
+        await emailjs.send(
+          'service_1gwh18f',      
+          'template_lnms2n6', 
+          templateParams,
+          '1L-SCqyOyFX3WYZaa'     
+        );
         alert('Thank you for your question! We\'ll review it and potentially add it to our FAQ.');
         this.closeSubmitModal();
       } catch (error) {
         console.error('Error submitting question:', error);
         alert('Sorry, there was an error submitting your question. Please try again.');
       }
-    },
+    }
   },
 };
 </script>
