@@ -2713,7 +2713,7 @@ export default {
 
 
 .contact-methods-section {
-  margin-top: -55px;
+  margin-top: -30px;
   margin-left: 73px;
   margin-bottom: 45px;
   width: 80%;
