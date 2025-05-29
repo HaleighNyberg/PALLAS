@@ -221,7 +221,7 @@ export default {
     };
 
     const predefinedFocusTags = [ "Physics", "Math", "Biology", "Astronomy", "Computer Science", "Chemistry", "Geology", "Environmental Science", "Medical Science", "Robotics", "Engineering", "Nanotechnology", "Oceanography", "Psychology", "Art History (Scientific Illustration)", "Materials Science", "Data Science", "Artificial Intelligence", "Meteorology", "Ecology", "Astrophysics", "Quantum Computing", "Biotechnology", "Neuroscience", "Forensic Science", "Energy Science", "Acoustics", "Systems Engineering", "Agricultural Science"];
-    const predefinedMediumTags = [ "Painting", "Sculpture", "Photography", "Digital", "Mixed Media", "Drawing", "Illustration", "Printmaking", "Ceramics", "Textile Art", "Collage", "Installation Art", "Video Art", "Performance Art", "3D Modeling", "Augmented Reality", "Virtual Reality", "Sound Art", "Kinetic Art", "Glass Art", "Woodworking", "Metalworking", "Mosaic", "Calligraphy", "Paper Art", "Projection Mapping"];
+    const predefinedMediumTags = [ "Pencil", "Pen", "Painting", "Sculpture", "Photography", "Digital", "Mixed Media", "Drawing", "Illustration", "Printmaking", "Ceramics", "Textile Art", "Collage", "Installation Art", "Video Art", "Performance Art", "3D Modeling", "Augmented Reality", "Virtual Reality", "Sound Art", "Kinetic Art", "Glass Art", "Woodworking", "Metalworking", "Mosaic", "Calligraphy", "Paper Art", "Projection Mapping"];
 
     const focusDropdown = ref(null);
     const mediumDropdown = ref(null);

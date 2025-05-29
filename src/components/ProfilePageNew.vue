@@ -1579,8 +1579,9 @@ export default {
     const itemToDelete = ref(null)
     
 
-    const predefinedFocusTags = ["Biology", "Astronomy", "Chemistry", "Mathematics", "Physics", "Engineering", "Computer Science", "Ecology", "Geology", "Environmental Science", "Meteorology", "Statistics", "Biochemistry", "Robotics", "Nanotechnology", "Geography", "Data Science", "Cognitive Science"]
-    const predefinedMediumTags = ["Oil", "Acrylic", "Watercolor", "Digital", "Abstract", "Mixed Media", "Pastel", "Ink", "Charcoal", "Sculpture", "Collage", "Graffiti", "Photography", "Ceramics", "Printmaking", "Encaustic"]
+    const predefinedFocusTags = [ "Physics", "Math", "Biology", "Astronomy", "Computer Science", "Chemistry", "Geology", "Environmental Science", "Medical Science", "Robotics", "Engineering", "Nanotechnology", "Oceanography", "Psychology", "Art History (Scientific Illustration)", "Materials Science", "Data Science", "Artificial Intelligence", "Meteorology", "Ecology", "Astrophysics", "Quantum Computing", "Biotechnology", "Neuroscience", "Forensic Science", "Energy Science", "Acoustics", "Systems Engineering", "Agricultural Science"];
+    const predefinedMediumTags = [ "Pencil", "Pen", "Painting", "Sculpture", "Photography", "Digital", "Mixed Media", "Drawing", "Illustration", "Printmaking", "Ceramics", "Textile Art", "Collage", "Installation Art", "Video Art", "Performance Art", "3D Modeling", "Augmented Reality", "Virtual Reality", "Sound Art", "Kinetic Art", "Glass Art", "Woodworking", "Metalworking", "Mosaic", "Calligraphy", "Paper Art", "Projection Mapping"];
+
     const dropdownFocusOpen = ref(false)
     const dropdownMediumOpen = ref(false)
     const searchFocusQuery = ref("")
